@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { X, CheckCircle2 } from "lucide-react";
+import { X, CheckCircle2, Loader2 } from "lucide-react";
 
 interface CountryCode {
   iso2: string;
@@ -182,10 +182,12 @@ export default function EnquireModal({ isOpen, onClose }: EnquireModalProps) {
     fetchCountries();
   }, []);
 
-  // Lock body scroll when modal is open
+  // Lock body scroll when modal is open and pre-warm database connection
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      // Background pre-warm to ensure zero-latency form submission
+      fetch("/api/enquire").catch(() => {});
     } else {
       document.body.style.overflow = "unset";
       setSubmitted(false);
@@ -458,9 +460,16 @@ export default function EnquireModal({ isOpen, onClose }: EnquireModalProps) {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full mt-4 sm:mt-5 py-3.5 bg-[#86BC25] hover:bg-[#709F1E] text-black font-extrabold rounded-none text-base shadow-md hover:shadow-lg transition-all duration-200 transform active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full mt-4 sm:mt-5 py-3.5 bg-[#86BC25] hover:bg-[#709F1E] text-black font-extrabold rounded-none text-base shadow-md hover:shadow-lg transition-all duration-200 transform active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                {loading ? "Submitting..." : "Submit"}
+                {loading ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin text-black" />
+                    <span>Submitting Enquiry...</span>
+                  </>
+                ) : (
+                  "Submit"
+                )}
               </button>
             </form>
           )}

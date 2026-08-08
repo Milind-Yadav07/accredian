@@ -67,3 +67,14 @@ export async function POST(req: Request) {
     );
   }
 }
+
+// GET endpoint to pre-warm the MongoDB database connection when modal opens
+export async function GET() {
+  try {
+    await connectToDatabase();
+    return NextResponse.json({ success: true, message: "DB connection pre-warmed" });
+  } catch (error: any) {
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  }
+}
+
