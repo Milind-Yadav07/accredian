@@ -38,10 +38,10 @@ npm install
 
 ### 4. Configure Environment Variables
 
-Create a `.env.local` file in the root directory (refer to `.env.example` for reference):
+Create a `.env.local` file in the root directory:
 
 ```env
-MONGODB_URI=mongodb+srv://db_user_name:PASSWORD@cluster0.bnctvtt.mongodb.net/accredian_enterprise?retryWrites=true&w=majority
+MONGODB_URI=MONGODB-CONNECTION-STRING
 ```
 
 ### 5. Run Development Server
