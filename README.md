@@ -21,7 +21,7 @@ A high-performance, enterprise-grade web application built for **Accredian** usi
 Ensure you have the following installed on your machine:
 
 - **Node.js**: `v18.0.0` or higher
-- **Package Manager**: `npm` (v9+) or `yarn` or `pnpm`
+- **Package Manager**: `npm` or `yarn` or `pnpm`
 
 ### 2. Clone Repository
 
@@ -175,4 +175,4 @@ Submits an enterprise enquiry to the MongoDB database.
 
 ---
 
-## This project is created for the Full-Stack Developer Internship Assignment at **Accredian**.
+### This project is created for the Full-Stack Developer Internship Assignment at **Accredian**.
