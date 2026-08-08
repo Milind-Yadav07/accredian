@@ -10,7 +10,7 @@ A high-performance, enterprise-grade web application built for **Accredian** usi
 
 <br>
 
-## [Visit the Live Project ✨](https://accredian-9fn0rmuf8-milind07s-projects.vercel.app/)
+## [Visit the Live Project ✨](https://accredian-ecru.vercel.app/)
 
 <br>
 
