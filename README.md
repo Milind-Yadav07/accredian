@@ -1,22 +1,18 @@
-# Accredian Enterprise - Full-Stack Platform
+<h1 align="center"> Accredian Enterprise </h1>
 
-A high-performance, enterprise-grade web application built for **Accredian** using Next.js 16 (App Router), React 19, TypeScript, TailwindCSS v4, GSAP Animations, Mongoose, and MongoDB Atlas.
+## ✨ Overview
 
-![Accredian Banner](public/enquire-banner.png)
+A high-performance, enterprise-grade web application built for **Accredian** using Next.js 16 (App Router), React 19, TypeScript, TailwindCSS v4, GSAP Animations, Mongoose, and MongoDB
 
----
+<br>
 
-## 📋 Table of Contents
+![Accredian Banner](public/readme-image.png)
 
-- [⚙️ Setup Instructions](#-setup-instructions)
-- [💡 Approach Taken](#-approach-taken)
-- [🤖 AI Usage Explanation](#-ai-usage-explanation)
-- [🔮 Improvements You Would Make with More Time](#-improvements-you-would-make-with-more-time)
-- [🌟 Key Features](#-key-features)
-- [🛠️ Tech Stack](#-tech-stack)
-- [📡 API Reference](#-api-reference)
+<br>
 
----
+## [Visit the Live Project ✨](https://accredian-9fn0rmuf8-milind07s-projects.vercel.app/)
+
+<br>
 
 ## ⚙️ Setup Instructions
 
@@ -30,8 +26,8 @@ Ensure you have the following installed on your machine:
 ### 2. Clone Repository
 
 ```bash
-git clone https://github.com/Milind-Yadav07/accredian-assignment.git
-cd accredian-assignment
+git clone https://github.com/Milind-Yadav07/accredian.git
+cd accredian
 ```
 
 ### 3. Install Dependencies
@@ -45,7 +41,7 @@ npm install
 Create a `.env.local` file in the root directory (refer to `.env.example` for reference):
 
 ```env
-MONGODB_URI=mongodb+srv://milindcs07_db_user:jhqd5Y0MMctTB3tZ@cluster0.bnctvtt.mongodb.net/accredian_enterprise?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://db_user_name:PASSWORD@cluster0.bnctvtt.mongodb.net/accredian_enterprise?retryWrites=true&w=majority
 ```
 
 ### 5. Run Development Server
@@ -72,23 +68,21 @@ npm run start
 ### 1. Architectural & Technology Selection
 
 - Built using **Next.js 16 App Router** with **React 19** and **TypeScript** for server-side performance, fast page loads, automatic route optimization, and end-to-end type safety.
-- Utilized **TailwindCSS v4** for clean utility-first styling adhering to Accredian's corporate Deloitte Green (`#86BC25`) design language with sharp UI borders (`rounded-none`).
+- Utilized **TailwindCSS v4** for clean utility-first styling adhering to Accredian's Green design language with sharp UI borders.
 
 ### 2. Interactive GSAP Animations
 
 - Implemented an **interactive GSAP FAQ Accordion** featuring a 3-second auto-expansion loop that cycles through FAQ items.
-- Configured spring physics (`back.out(1.7)`) for smooth expansion and highlight state active transitions.
+- Configured spring for smooth expansion and highlight state active transitions.
 
 ### 3. Enterprise Form & FlagCDN Integration
 
 - Engineered a 2-column **Enquire Modal** with full phone input support.
-- Fetches real-time country phone codes from the **CountryStateCity API** and renders country flags via **FlagCDN** (`https://flagcdn.com/w20/{iso2}.png`), including search filtering and selected value state persistence.
+- Fetches real-time country phone codes from the **CountryStateCity API** and renders country flags via **FlagCDN** including search filtering and selected value state persistence.
 
 ### 4. Database & Connection Management
 
-- Connected the form directly to **MongoDB Atlas** using **Mongoose**.
-- Implemented a singleton Mongoose connection caching module ([src/lib/db.ts](file:///c:/Users/milin/OneDrive/Desktop/projects/accredian-assignment/src/lib/db.ts)) to prevent connection leaks during Next.js development hot-reloading.
-
+- Connected the form directly to **MongoDB** using **Mongoose**.
 ---
 
 ## 🤖 AI Usage Explanation
@@ -97,25 +91,7 @@ During the development of this full-stack assignment, AI tools (Google DeepMind'
 
 1. **Prototyping & Scaffolding**: Accelerated early boilerplate component setup, Tailwind utility structuring, and TypeScript interface definitions.
 2. **GSAP Animation Tuning**: Assisted in refining GSAP timeline sequencing and spring easing formulas for smooth card transitions.
-3. **Cross-Browser & Responsive Auditing**: Used for rapid inspection of responsive grid layouts across mobile (`320px`), tablet (`768px`), and desktop (`1024px+`) viewports.
-4. **Human Guidance & Quality Control**: All core business logic, database schema design, design system choices (Deloitte Green palette), API integration logic, and final code reviews were authored, verified, and directed by the developer to guarantee production readiness.
-
----
-
-## 🔮 Improvements You Would Make with More Time
-
-Given additional time, the following features and enhancements would be added to scale the project further:
-
-1. **🔒 Secure Lead Management Admin Dashboard**:
-   - Build a protected `/admin/enquiries` portal with NextAuth.js / JWT authentication allowing enterprise sales teams to view, search, status-tag, and export enquiries to CSV/Excel.
-2. **📧 Automated Email Notifications**:
-   - Integrate **Resend** or **SendGrid** to trigger instant automated email alerts to `enterprise@accredian.com` whenever a new enquiry is submitted, along with a automated confirmation email to the applicant.
-3. **🧪 End-to-End & Automated Testing**:
-   - Write comprehensive E2E tests using **Playwright** or **Cypress** covering form validation, country dropdown filtering, modal submission, and API failure fallbacks.
-4. **📊 Analytics & Conversion Funnel Tracking**:
-   - Embed Google Analytics 4 (GA4) and Mixpanel tracking events on modal opens, form field interactions, and successful enquiry completions to measure drop-off rates.
-5. **⚡ Serverless Rate Limiting**:
-   - Add Redis-based rate limiting (via Upstash Rate Limit) to `/api/enquire` to prevent form spamming and DDoS attacks.
+3. **Cross-Browser & Responsive Auditing**: Used for rapid inspection of responsive grid layouts across mobile, tablet, and desktop viewports.
 
 ---
 
@@ -123,8 +99,8 @@ Given additional time, the following features and enhancements would be added to
 
 ### 🎨 Frontend & Design System
 
-- **Corporate Branding**: Tailored Deloitte Green (`#86BC25`) brand palette with dark mode accents (`bg-slate-900`).
-- **Interactive GSAP FAQ Accordion**: 3-second auto-expansion loop through all FAQ items with active Deloitte Green highlights.
+- **Corporate Branding**: Tailored Green brand palette with dark mode accents.
+- **Interactive GSAP FAQ Accordion**: 3-second auto-expansion loop through all FAQ items with active Green highlights.
 - **Enquire Modal Popup**: 2-column modal layout with FlagCDN thumbnails and search filtering powered by the CountryStateCity API.
 - **Infinite Logo Marquee**: Smooth infinite marquee showcasing top corporate partner logos (Google, Amazon, Coca-Cola, etc.).
 
@@ -199,6 +175,4 @@ Submits an enterprise enquiry to the MongoDB database.
 
 ---
 
-## 📄 License
-
-This project is created for the Full-Stack Developer Internship Assignment at **Accredian**.
+## This project is created for the Full-Stack Developer Internship Assignment at **Accredian**.
